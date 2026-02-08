@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Exam Score Predictor</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card result-card">
+            <h2>Prediction</h2>
+            <div class="result-value">{{ '%.2f'|format(prediction) }}</div>
+            <a href="/" class="btn-ghost">Try another prediction</a>
+        </section>
+    </main>
+</body>
+</html>

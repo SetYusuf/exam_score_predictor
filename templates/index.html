@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exam Score Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Exam Score Predictor</h1>
+            <p class="tag">Simple, fast predictions from your trained model</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card form-card">
+            <h2>Enter your details</h2>
+            <form action="/predict" method="POST" class="predict-form">
+                <label>Hours Study</label>
+                <input type="number" name="hours_study" step="0.1" min="0" required>
+
+                <label>Hours Sleep</label>
+                <input type="number" name="hours_sleep" step="0.1" min="0" required>
+
+                <label>Revision Days</label>
+                <input type="number" name="revision_days" step="0.1" min="0" required>
+
+                <button type="submit" class="btn-primary">Predict Score</button>
+            </form>
+        </section>
+
+        <footer class="site-footer">
+            <p>Model: exam_score_model.pkl — Local demo</p>
+        </footer>
+    </main>
+</body>
+</html>
